@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{report}
+\documentclass[a4paper, 12pt, twoside]{report}
 
 \author{Mehmet Colak}
 \title{Embracing Sphere \\[1ex] 
@@ -10,103 +10,39 @@
 
 \maketitle
 \tableofcontents
-\listoffigures
-\listoftables
 
 \begin{abstract}
     This thesis is about\ldots
 \end{abstract}
 
-\newpage
+\listoffigures
+\listoftables
 
-%   TODO: ADD MULTI FILE CHAPTERS AND SECTIONS
+\newpage
 
 %   Chapter I Introduction
 
-\chapter{Introduction}
-    \section{Background, State of Art}
-        \subsection{Immersion and Presence}
-        \subsection{Immersive Audio Technologies}
-        \subsection{Space and Audio}
-    \section{Research Question and Objectives}
-        \subsection{Benefits of Audio in Immersive Media}
-        \subsection{Conservatism in Technology Adoption}
-        \subsection{Stigmatization and Social Perceptions}
-    \section{Framework and Core Concepts}
-        \subsection{Abbreviatons and Key Terms}
-        \subsection{Technologies and Concept Overviews}
+\include{chapters/chapter_01}
 
 %   Chapter II Literature Review
 
-\chapter{Literature Review}
-    \section{Evolution of Audio Technologies}
-        \subsection{History in Recorded Audio}
-        \subsection{Theoretical Foundations of Spatial Sound}
-        \subsection{Immersive Audio Standarts and Frameworks}
-        \subsection{Open-Source Contributions}
-    \section{Artistic and Practical Applications}
-        \subsection{Immersive Audio in Media Art}
-        \subsection{Augmented and Virtual Reality}
-    \section{Artwork Examples}
-        \subsection{Pioneering Sound Artist and Works}
-        \subsection{Cross-Disciplinary Artworks}
-        \subsection{Sonic Interaction and Sound Installations}
-    \section{Challenges in Adoption}
-        \subsection{Economic Barriers}
-        \subsection{Technical Complexity}
-        \subsection{Cultural and Educational Gaps}
-    \section{Future Directions}
-        \subsection{Artificial Intelligence and Generative Adversarial Networks}
+\include{chapters/chapter_02}
 
 %   Chapter III Methodology and Case Study
 
-\chapter{Methodology and Case Study}
-    \section{Data Collection Analysis}
-        \subsection{Purpose and Scope}
-    \section{Artistic Experimentation}
-        \subsection{A Glimpse from Tannhauser Gate}
-        \subsection{Description of Proposed Artwork}
-        \subsection{Human Interaction Goals}
-    \section{Technical Methods and Sound Approach}
-        \subsection{Screen Based Eye Tracking}
-        \subsection{Generative RIR, Interactive Environments I}
-        \subsection{Spatial Audio System, Interactive Environments II}
-        \subsection{Sonic Environmental Narration Endpoints}
-    \section{Data Collection Tools}
-        \subsection{Eye Tracking Heat Maps}
-        \subsection{User Unique Audio Narration Sequences}
-        \subsection{Questionnaire}
-    \section{Analysis Framework}
-        \subsection{Self Observations}
-        \subsection{Identified Barriers and Biases}
-        \subsection{Feasibility}
+\include{chapters/chapter_03}
     
 %   Chapter IV Result and Discussions
 
-\chapter{Result and Discussions}
-    \section{Audience Feedback and Analysis}
-        \subsection{Statistical Insights}
-        \subsection{Expectations and Questionnaire Results}
-    \section{Key Themes and Observations}
-        \subsection{Intuitivenes of Interaction}
-        \subsection{Technical Challenges and Opportunities}
-    \section{Comparison with Literature}
-        \subsection{Alignment with Prior Research}
-        \subsection{Identified Differences}
-    \section{Audience Engagement}
-        \subsection{Interactive Pattern and Behaviours}
-        \subsection{Role of Artistic Expression}
+\include{chapters/chapter_04}
 
 %   Chapter V Conclusion
 
-\chapter{Conclusion}
-    \section{Summary of Findings}
-    \section{Implications for Artist and Developers}
-    \section{Limitations of Research}
-    \section{Final Thoughts}
+\include{chapters/chapter_05}
 
 % Chapter VI References
 
+\bibliographystyle{plain}
 \bibliography{chapter{Bibliography}}
 
 
