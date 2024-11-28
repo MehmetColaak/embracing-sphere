@@ -1,26 +1,19 @@
 \documentclass[a4paper, 11pt, twoside]{report}
+\usepackage{times}
 \usepackage{graphicx}
 \usepackage{lipsum}
 
-\begin{titlepage}
-  
-    \author{Mehmet Colak}
-    \title{\includegraphics[width = 80mm]{images/logo_embrace_sphere.png}\\[5ex]  Embracing Sphere\\[1ex] 
-    \Large A Critical Approach to the Adoption of Immersive Audio Technologies in Sound Art\\[3ex]
-    \large University of Arts Linz\\[6ex]}
-    \date{01.05.2025}
-
-\end{titlepage}
-
 \begin{document}
 
-\maketitle
+%   Title Page
+
+\include{sources/titlepage}
 
 \tableofcontents
 
-\begin{abstract}
-    \lipsum[1]
-\end{abstract}
+%   Abstract Page
+
+\include{sources/abstract}
 
 \listoffigures
 \listoftables
@@ -29,23 +22,23 @@
 
 %   Chapter I Introduction
 
-\include{chapters/chapter_01}
+\include{sources/chapter_01}
 
 %   Chapter II Literature Review
 
-\include{chapters/chapter_02}
+\include{sources/chapter_02}
 
 %   Chapter III Methodology and Case Study
 
-\include{chapters/chapter_03}
+\include{sources/chapter_03}
     
 %   Chapter IV Result and Discussions
 
-\include{chapters/chapter_04}
+\include{sources/chapter_04}
 
 %   Chapter V Conclusion
 
-\include{chapters/chapter_05}
+\include{sources/chapter_05}
 
 % Chapter VI References
 
