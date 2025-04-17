@@ -1,23 +1,11 @@
 # Embracing Sphere
 
-Immersive audio technologies, such as ambisonics and HRTF (Head-Related Transfer Function),
-aim to replicate spatial soundscapes, creating immersive auditory experiences. Despite their
-potential applications in gaming, virtual reality, cinema, and assistive tools for the visually
-impaired, the adoption of these technologies has faced barriers. These include technical
-challenges, high implementation costs, limited public awareness, and the need for compatible
-hardware and software. This research will examine the current state of 3D audio, factors limiting
-its broader adoption, and opportunities to accelerate innovation, particularly in enhancing
-storytelling and accessibility.
+Conveying a narrative through environment is a known technique in multiple media domains. Blood stain under the door, footstep trails on snow and broken chain next to a beware dog sign; all those flash scene descriptions are an example for environmental narration. Heavy reliance on visual cues defines the limitations of current methods in environmental storytelling. Utilizing multi-modal stimuli and 3D audio volumes for enhancing environmental narration remains niche and open for new perspectives in storytelling and narration through the environment. 
 
-The thesis aims to address these gaps by integrating acoustic technologies and sonic interfaces
-within artistic contexts. Procedural methods will be employed to generate room impulse
-responses based on interactive acoustic parameters. Through this exploration, the thesis will
-evaluate the feasibility and artistic potential of using sonic interfaces as tools for creative
-expression.
+To explore possibilities beyond these limitations, this research explores the integration of haptic feedback and acoustic modeling methods. Haptic feedback systems mostly used by video games, racing simulations and interactive art installations, are often fed by low frequency audio signals to create pulses on haptic actuators. Complementing tactile experience, Room Impulse Response (RIR) is a method of capturing acoustic properties of an enclosed volume/space later to use in reverberation(specifically convolution reverbs) to reconstruct the same acoustic responses while simulating different materials. Combining these distinct modalities like tactile pulses and acoustic reconstruction offers novel ways to represent environmental snapshots purely through non-visual interfaces.
 
-To explore these social behaviours, the thesis will use a questionnaire after presenting sound art
-created with the technologies mentioned before. This will help reveal how these technologies are
-perceived, any barriers or biases to their adoption, and the overall acceptance of these immersive
-audio technologies.
+Building on this potential, a multi-modal stimulation scenario using simultaneous audio signal playback driven by a speaker array incorporating procedurally generated RIRs and a bass shaker (transducer) will be this thesis's foundational method for creating artificial environments and allowing the audience to perceive the world.
+
+This applied work master’s thesis will investigate the current state and the potential of such multi-modal experiences in conveying environmental information and narrative, aiming to design, implement and evaluate an interactive audio-tactile system capable of procedurally generating environmental snapshots for narrative purposes.
 
 ![Embracing Sphere Logo](images/logo_embrace_sphere.png "Embracing Sphere Logo")
