@@ -2,6 +2,7 @@
 \usepackage{times}
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{lipsum}
 \usepackage{float}
 \usepackage{parskip}
@@ -15,6 +16,7 @@
 %   Title Page
 
 \include{sources/titlepage}
+\newpage\null\thispagestyle{empty}\newpage
 
 % Acknowledgements
 
@@ -25,6 +27,7 @@
 %   Abstract Page
 
 \include{sources/abstract}
+\newpage\null\thispagestyle{empty}\newpage
 
 %   Chapter I Introduction
 
@@ -54,6 +57,5 @@
 % Lists
 
 \listoffigures
-\listoftables
 
 \end{document}
