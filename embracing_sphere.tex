@@ -1,7 +1,7 @@
 \documentclass[a4paper, 11pt, twoside]{report}
 \usepackage{times}
 \usepackage{graphicx}
-\usepackage[hidelinks]{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{lipsum}
 \usepackage{float}
@@ -12,7 +12,6 @@
 \DeclareGraphicsExtensions{.png,.jpg}
 
 \begin{document}
-
 %   Title Page
 
 \include{sources/titlepage}
