@@ -28,6 +28,8 @@
 
 ## Image Files
 *.png
+*.jpg
+*.JPG
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
