@@ -166,6 +166,35 @@
 
             In previous sections we covered room impulse response description in surface level. It is a captured audio file that contains acoustics space characteristics such as frequency changes, reverberation decay and length.\par
 
+            There are several practical ways to capture RIR of a room. The easiest one is popping a balloon in the desired room and recording the balloon pop. This method is practical but not much accurate and it is not easy to recreate again because every balloon pop sound parameters can be differ in frequency-wise\cite{RIR_Swept-Sine_Technique}. The more accurate method is sine sweep technique\footnote{A sine sweep IR capture example: \url{https://youtu.be/1egKAtC16e8?feature=shared}}, which includes 1 reference sine wave sweep audio (5-10 seconds long) that starts from 20Hz and sweeps every frequencies until 20kHz\cite{Auditory_Perception_of_Sound_Sources}. In this method the room is acoustically excited by this sine wave and with a microphone the room response recorded then processed with a mathematical process called deconvolution that extracts RIR with subtracting reference sine sweep from reverberant recording.\par
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{images/IR_Capture_Balloon_Pop.png}
+                \caption{A visual from a recording session for capturing room impulse response in an old house in Balat, Istanbul.}
+                \label{fig:IR_BALLOON}
+            \end{figure}            
+
+            The visual in \ref{fig:IR_BALLOON} is a recording session in 2021 when I was working as an audio designer in a company called Vadi Sound. In that frame we were capturing RIR with balloon popping in an old house in Balat, Istanbul. The house specifically interesting for capturing RIR because it was one of the few historical wooden houses remain in the Istanbul from early Turkish Republic times. In that situation we hadn't got any high quality full range speaker to excite the room so we choose to pop a balloon at several places in the room to capture as many different positions RIR.\par
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1\textwidth]{images/IR_Capture_Sine_Sweep.png}
+                \caption{A visual of a RIR capturing session in a studio using sine sweep method. Retrieved from Audioease website \url{https://www.audioease.com/altiverb/browse.php}}
+                \label{fig:IR_SINE}
+            \end{figure}
+
+            An RIR capturing session that using sine sweep method can be seen in the figure \ref{fig:IR_SINE}. The specific setup uses 2 omnidirectional microphone positioned in the A/B stereo miking technique (a well known stereo miking technique in ambience recordings.)\cite{Sound_Reinforcement} and 1 binaural microphone to capture studio room impulse response.\par
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.6\textwidth]{images/Room_RT.png}
+                \caption{An illustration of raytracing of a sound in a close environment. Drawn in AMROC website \url{https://amcoustics.com/tools/amray}}
+                \label{fig:IR_RAYTRACE}
+            \end{figure}
+
+            Either method works in basic principle shown in the figure \ref{fig:IR_RAYTRACE}. A source that exciting the room and a capturing point that captures the room's acoustic character. From an artistic or design perspective we can see this process as taking an auditory snapshot of the room.\par
+
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=1\textwidth]{images/IR_Comparison.png}
