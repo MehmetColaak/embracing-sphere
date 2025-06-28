@@ -119,7 +119,7 @@
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.8\textwidth]{images/crewmembers.png}
-                \caption{An illustration of crew member of the Obra Dinn.}
+                \caption{An illustration of all crew members of the Obra Dinn.}
                 \label{fig:SHIPCREW}
             \end{figure}   
 
@@ -129,7 +129,7 @@
 
             After covering necessary perspective from narratology and video game studies, sound and perception are going to be investigated in more detail, specifically acoustics and psychoacoustics subjects within the next subchapter.
     \section{Room Acoustics}
-            \emph{"Sound is something most people take for granted. Our environment is full of noises, which we have been exposed to from before birth. What is sound, how does it propagate and how can it be quantified\cite{Acoustics_and_Psychophysics}?"}\par 
+            \emph{"Sound is something most people take for granted. Our environment is full of noises, which we have been exposed to from before birth. What is sound, how does it propagate and how can it be quantified?"\cite{Acoustics_and_Psychophysics}}\par 
 
             The purpose of this subchapter is to introduce fundamental knowledge ground for room acoustics and describe the usage of room impulse responses in the Embracing Sphere context.\par
         \subsection{Definitions for Room Acoustics}
@@ -139,7 +139,7 @@
 
             When sound moves through a room, its behavior is shaped by how it interacts with surfaces, mainly through absorption and reflection. Sound reflection occurs when sound waves hit a hard boundary and bounce back into space. In contrast, sound absorption is when a material takes in the sound's energy, which is converted into small amounts of heat through internal friction, reducing the amount of sound that reflects\cite{Acoustics_and_Psychophysics}. For example, a wooden surface absorbs more sound than a rough concrete one. These interactions, along with others like refraction and interference, collectively determine the acoustic character of a room.\par
 
-            These interactions do not occur in isolation. They collectively define the complex behavior of sound waves and their propagation within the room. Each time a sound interacts with a surface in a room it loses some of its energy due to absorption and reflection. The time that it takes for a sound to die away at any given time in a room is called the reverberation time.\par
+            These interactions do not occur in isolation. They collectively define the complex behavior of sound waves and their propagation within the room. Each time a sound interacts with a surface in a room it loses some of its energy due to absorption and reflection. The time that it takes for a sound to gradually fade out in a room is called the reverberation time.\par
 
             Reverberation time is an important aspect of sound behavior in a room. Mentioned different absorption coefficient values in different materials and frequencies shapes the perception of the room. If the sound dies away very quickly, we perceive the room as being “dead” or if the sound dies away very slowly, we perceive the room as being “live”. To calculate reverberation times there is a simple formula known as the “Sabine formula”, named after its developer Wallace Clement Sabine\cite{Acoustics_and_Psychophysics}.\par 
             $$RT_{60} = \frac{0.161 \cdot V}{A}$$
@@ -184,24 +184,61 @@
                 \label{fig:IR_SINE}
             \end{figure}
 
-            An RIR capturing session that using sine sweep method can be seen in the figure \ref{fig:IR_SINE}. The specific setup uses 2 omnidirectional microphone positioned in the A/B stereo miking technique (a well known stereo miking technique in ambience recordings.)\cite{Sound_Reinforcement} and 1 binaural microphone to capture studio room impulse response.\par
+            An RIR capturing session that using sine sweep method can be seen in the figure \ref{fig:IR_SINE}. The specific setup uses 2 omnidirectional microphone positioned in the A/B stereo miking technique (a well known stereo miking technique in ambience recordings.)\cite{Sound_Reinforcement}\cite{Professional_Microphone_Techniques} and 1 binaural microphone to capture studio room impulse response.\par
 
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.6\textwidth]{images/Room_RT.png}
+                \includegraphics[width=0.4\textwidth]{images/Room_RT.png}
                 \caption{An illustration of raytracing of a sound in a close environment. Drawn in AMROC website \url{https://amcoustics.com/tools/amray}}
                 \label{fig:IR_RAYTRACE}
             \end{figure}
 
-            Either method works in basic principle shown in the figure \ref{fig:IR_RAYTRACE}. A source that exciting the room and a capturing point that captures the room's acoustic character. From an artistic or design perspective we can see this process as taking an auditory snapshot of the room.\par
+            Either method works in basic principle shown in the figure \ref{fig:IR_RAYTRACE}. A source that exciting the room and a capturing point that captures the room's acoustic character.\par
+
+            RIRs are artistically useful for virtual aural architecture. In real life architecture uses volumes to evoke intended emotion or paradigms. Some spaces can evoke feeling about privacy or loneliness, others can invite for social cohesion or some space can establish an hierarchy between different roles in the society\cite{Spaces_Speak_Are_You_Listening?}. Artistically I see enclosed spaces and its response as an actor in my story. Same dialog or sonic events can convey many different meanings and feelings according to environments relation with the stimulation.\par
 
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=1\textwidth]{images/IR_Comparison.png}
-                \caption{Plotting of RIR files of 2 distinct spaces, a small room and The Hagia Sophia (Plotted with matplotlib and librosa in python).}
+                \caption{Plotting of RIR files of 2 distinct spaces, a small room and The Hagia Sophia. Plotted with matplotlib and librosa in python.}
                 \label{fig:IR_COMP}
             \end{figure}
+
+            To explain frequency difference and reverberation time affect in any sonic event, the 2 completely different character RIR waveform and spectrogram graphic shown in the figure \ref{fig:IR_COMP}. As we can see at the left column in the graph, these 2 RIR files has quite different in length and density.\par
+
+            First row with blue waveform is from a small room RIR shown above with a picture of mine holding a balloon. The length of this small room RIR is around 500ms which indicates small volume and highly absorbent environment with carpets on the floor, many cushions and curtains.\par 
             
+            The second row with orange waveform is from architecturally and historically famous building Hagia Sofia in Istanbul built in 6th century. The Byzantine church Hagia Sophia transformed into a mosque after conquest of Constantinople (modern day Istanbul) by Ottoman Empire in 1453 and functioned as a mosque until it transformed into a secular museum with the political and social reforms made in 1935 under Mustafa Kemal Atatürk then reverted back into a mosque in 2020 by Turkish government to support their religious ideologies and symbolic political endeavors\cite{Evolution_of_Hagia_Sophia}. This iconic wonder has stood against time and many diverse cultural influences.\par
+
+            To study the acoustics of old Byzantine churches and mosques built by famous architect Sinan (known as Mimar Sinan) the CAHRISMA project (Conservation of the Acoustical Heritage by the Revival and Identification of the Sinan’s Mosques Acoustics) started in 2003\cite{Hagia_Sophia_Multisensory_Aestethics}. In this project, sine sweep technique used, a omnidirectional loudspeaker emits a sinusoidal sweep signal in the Hagia Sophia and the response of the environment is simultaneously recorded with a microphone. The sweep response is then deconvolved with the reference sweep signal\cite{Odeon_Hagia_Sophia}.\par
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.6\textwidth]{images/hagia_sophia_wireframe.png}
+                \caption{Wireframe visualization of Hagia Sophia from ODEON software. Retrieved from ODEON web-blog \url{https://odeon.dk/the-church-hagia-sophia}}
+                \label{fig:HS_WIREFRAME}
+            \end{figure} 
+
+            The RIR of Hagia Sophia then the analyzed and full acoustic model built in an acoustic software called ODEON\cite{Odeon_Hagia_Sophia}. This model can simulate auralization of any anechoic sound inside Hagia Sophia in different positions and the aural difference between Hagia Sophia as a mosque (with carpet floor and wooden panels with Arabic inscription) and Hagia Sophia as a church (mainly marble floor, stone walls)\cite{Revived_Acoustical_History_of_Hagia_Sophia}.\par
+
+            \begin{table}[h!]
+                \centering
+                \begin{tabular}{|l|c|c|c|c|c|}
+                \hline
+                Material & 125 Hz & 250 Hz & 500 Hz & 1000 Hz & 2000 Hz \\
+                \hline
+                Painted Wood & 0.04 & 0.04 & 0.07 & 0.06 & 0.06 \\
+                Carpet       & 0.01 & 0.02 & 0.06 & 0.15 & 0.25 \\
+                Marble       & 0.01 & 0.01 & 0.01 & 0.01 & 0.02 \\
+                \hline
+                \end{tabular}
+                \caption{Absorption coefficients for painted wood and marble at different frequencies\cite{Absoption_Coefficient_Table}.}
+                \label{tab:COEFF}
+            \end{table}
+
+            As we see the shown in the figure \ref{fig:IR_COMP} Hagia Sophia's reverberation time is much longer than than our small room, around 6-8 seconds. The frequency response of both of the examples also shown in the figure \ref{fig:IR_COMP}. The frequency response also depends on volume, absorption coefficient and affects the heard sound dramatically. High frequencies are easier to absorbed by air and surfaces\cite{Room_Acoustics} in the room and this can be seen in the figure \ref{fig:IR_COMP} as a colorful slope in the spectrogram panels in the right column.\par
+
+            In artistic view, ability to snapshot an environment and using for creating virtual environments\cite{Recreation_of_the_Acoustics_of_Hagia_Sophia} highly interesting and useful for my perspective. Using RIRs to develop such virtual environments require a specific signal processing called "convolution". The next section will cover the practical mathematical description of convolution and its capabilities in digital audio.
             
         \subsection{Convolution in Math and Digital Audio}
             Convolution is a mathematical operation that combines two functions to produce a third function. This new function expresses how the shape of one function is modified by the other. In simple terms, convolution tells us how one signal changes when it passes through a system described by another signal. The convolution algorithm is often interpreted as a filter, where the kernel filters the feature map for certain information\cite{Deep_Learning_Core_Concepts}.\par
@@ -224,15 +261,24 @@
             $$1\cdot12=12$$
             To summarise all the details,\par
             \begin{itemize}
-                \item The Input (Orders): [10 11 12]
-                \item The Plan (First meal, next hour dessert): [2 1]
-                \item The Result (Total eggs used per hour): [20 32 35 12]
+                \item The Input (Orders): [10, 11, 12]
+                \item The Plan (First meal, next hour dessert): [2, 1]
+                \item The Result (Total eggs used per hour): [20, 32, 35, 12]
             \end{itemize}
             This calculation is a high level example for convolution operation. In digital audio with the lists that has at least 44100 samples\footnote{The Nyquist-Shannon sampling theorem states that a continuous signal can be accurately reconstructed from its discrete samples when the sampling frequency exceeds twice the maximum frequency present in the original signal\cite{Digital_Audio_Theory}.} per second, much more convolution operations needed to convolve an input audio (input) and an impulse response(kernel).\par
 
             Convolution is a key tool for processing sounds. It is used to apply the characteristics of one sound (such as the acoustics of a room or the response of a speaker) to another sound (like a musical recording or a voice).\par
 
             Convolution is also used in digital filters, such as equalizers and effects and in spatial audio to simulate how sound arrives at the ears from different directions. For example, by convolving audio with a head-related transfer function (HRTF), we can make sounds appear to come from specific locations in three-dimensional space\cite{3D_Audio}.\par
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1\textwidth]{images/convolution_result.png}
+                \caption{Waveform plotting of convoluted signal of The Hagia Sophia RIR and unechoic singing voice. Plotted with matplotlib and librosa in python.}
+                \label{fig:CONV_RESULT}
+            \end{figure}
+            
+            
         \subsection{Room Acoustics in Sound Art} Explain Alvin Lucier - "I Am Sitting in a Room" Process-based art, using the room's acoustics as both medium and subject, the iterative feedback loop revealing resonant frequencies.
     \section{Haptics and Perception}
         \subsection{Overview of Haptics}
@@ -270,4 +316,5 @@
         \subsection{Usage} Examples of haptics in HCI, VR/AR, accessibility and gaming.
     \section{Audio-Tactile Interaction}
         \subsection{Definition of Audio-Tactile Multi-Modal Interaction} Define audio-tactility and explain differences from other multi-modal systems.
-        \subsection{Usage of Audio-Tactility in Media} Examples of systems or experiences integrating audio and haptics.
+        \subsection{Multi-Modal Media in Sci-Fi Literature} Case study about Feelies in Brave New World - Aldous Huxley 
+        \subsection{Usage of Audio-Tactility in Video Games} Examples of systems or experiences integrating audio and haptics. Give examples from Playstation Exclusive Games.
