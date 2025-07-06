@@ -367,13 +367,94 @@
             \begin{itemize}
                 \item What is the detection thresholds of vibrotactile stimulation?
                 \item How vibrations effect material texture feeling of an object?
+                \item How whole body vibrations affect our feeling?
                 \item How vibration amplitude, frequency and frequency pitch intervals effect haptic cognition?
                 \item Which body parts or positions is effective in haptic stimulation most?
                 \item How audio-tactile stimulation is effecting our localization capabilities?
             \end{itemize}
 
             These questions introduced in the context of Embracing Sphere to basically have a certain knowledge ground while crafting/designing content for Embracing Sphere. As ultimate goal is to convey an environmental storytelling through audio-tactile interface, it is crucial to explore and study haptics in detail.\par
-        \subsection{Haptics in Media Arts} Examples of haptics in HCI, VR/AR, accessibility and gaming.
+
+            First answer defines tangible human limits and scales most effective playground for vibrotactile experience. Detection threshold of vibrotactile stimuli varies with frequency, transmission position and measurement conditions. Human response to vibration is multidisciplinary topic that involves many science such as biology, psychology, physics and biomechanics\cite{Human_Response_to_Vibration}.\par
+
+            People are primarily exposed to vibration either localized or vibration that affects whole body\cite{Human_Response_to_Vibration}. We experiencing our surroundings through these 2 different vibration ways. The question, "What is the required magnitude of a vibration for it to be perceived?" has to be restructured as "What is the required magnitude of a vibration in each frequency domain for it to be perceived by hand and whole body?". This restructuring embeds more accurate investigations in human response to vibration, assembling more useful data for Embracing Sphere. In many researches\cite{Human_Response_to_Vibration}\cite{Consonance_of_Vibrotactile_Chords}\cite{Threshold_of_Stimulation_Levels}\cite{Whole-Body_Vibration_Perception_Thresholds}, vibrotactile sensitivity of hand has measured highest (lowest threshold) at mid-range frequencies (40-150Hz) and decreases (threshold increases) at very low and very high frequencies (below 20 and above 400).\par
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{images/vibration_thresholds.png}
+                \caption{A plotting of minimum vibration magnitude required for the hand to perceive vibration. Data collected from sources\cite{Haptic_Music}\cite{Haptic_Perception-A_Tutorial}\cite{Human_Response_to_Vibration}, plotted in matplotlib using python.}
+                \label{fig:VIB_THRESHOLD}
+            \end{figure}
+
+            Whole body vibrations are important because humans are used to perceive whole vibrations in situations like being a passenger or driver in vehicles such as cars, trucks and helicopters; experiencing massive motions such as earthquake and waves in the sea\cite{Altinsoy_phd}. Whole body vibration is a vibration that affects the whole body, perceptive result of a stimuli in brain is a sum of every somatic sensors of our body\cite{Whole-Body_Vibration_Perception_Thresholds} and it may make us feel diverse feelings from nausea, sickness to refinement and rigidity\cite{Haptic_Perception-A_Tutorial}.\par 
+
+            According to a research\cite{Perceived_Quality_with_Vibration_of_Electric_Cello} perceived quality of an instrument is slightly affected by the vibration level of an instrument and according to other studies\cite{Consonance_of_Vibrotactile_Chords}\cite{Audio-Tactile_Rendering} vibrotactile perception of musical concepts (rhythm, pitch, melody cognition) is quite similar to auditory perception.\par
+
+            In the Audio-tactile Rendering experiment\cite{Audio-Tactile_Rendering}, tactile renderings and perceptive effects on different type of auditory concepts such as rhythm, pitch, melody, timbre and loudness explored and in the Consonance of Vibrotactile Chords experiment\cite{Consonance_of_Vibrotactile_Chords}, musical theory involved in to express musical feelings of consonance and dissonance via vibrotactile interfaces. Both experiments are highly related with my research and Embracing Sphere.
+
+            According to study\cite{Audio-Tactile_Rendering}, tactile rhythm perception explained in a basic way of filtering the music signal and using filtered signal as an exciter for an actuator. Rhythm is described as pattern of pulses in discrete time and rhythm as a musical feature can be perceived by multiple sensory channels such as visual, auditory, and touch.\par
+
+            Pitch perception with vibrotactile stimuli is a complex task as touch has frequency perception limitations. Simplest way is to translate pitch and loudness to vibrotactile stimuli, using speakers or VCAs which directly convert pitch to frequency and loudness to intensity of vibrations. However, frequency response of these actuators overpass skin perception thresholds we described, because of that information embedded in high-frequency bands (i.e., over 1000 Hz) might be lost.\par
+
+            Melody builds up as a suitable combination of pitch changes over time. Therefore, most of the limitations for pitch conversion also apply to melody.\par
+
+            Timbre allows the listener to differentiate between tones played from one or another musical instrument. Timbre relies on the frequency content called "overtones" (i.e., spectral content) of audio signals and overtones are frequencies of sound that are higher than the fundamental frequency of a vibrating object, which in a higher registry fundamental tone, an overtone series may start from higher than 600Hz. Therefore tactile translation of timbre represents a challenge.\par
+
+            The concepts derived from music theory and composition can be utilized for creating abstract but effective audio-tactile scenes where meaning is not so direct but more intuitive.\par
+
+            Another research\cite{Touch_the_Sound} catch my interest which experimenting an illusion that occuring during the evaluation of the multi-modal events. According to study visual, tactile and auditory information interacts and possess influence between each other. Multi-modal illusions like ventriloquism effect is an auditory illusion in which sound is misperceived from a source when it has different position at visible source. The effect is most powerful for speech sounds and it happens because of visual dominance over auditory information. It is exploited by stage ventriloquists who practice the art of speaking without moving their lips while manipulating the movements of a puppet.\cite{Touch_the_Sound}.\par
+            
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.6\textwidth]{images/ventriloquist.png}
+                \caption{A picture of a ventriloquist Peter Kerscher. Retrieved from \url{https://commons.wikimedia.org/wiki/Category:Ventriloquism/}}
+                \label{fig:VENTRILOQUIST}
+            \end{figure}
+
+            Although the multi-modal events determined by physical rules and usually has same position in physical world, it is possible to break this rules in virtual environments to have a control and optimization over object interaction in virtual environments.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.6\textwidth]{images/vibration_thresholds_02.png}
+                \caption{A plotting of minimum vibration magnitude required for the localization of a vibration. Data collected from sources\cite{Haptic_Perception-A_Tutorial}, plotted in matplotlib using python.}
+                \label{fig:VIB_THRESHOLD_02}
+            \end{figure}            
+
+            The localization capabilities of human with vibrotactile stimulation can be seen in the figure \ref{fig:VIB_THRESHOLD_02}.
+
+            The sum experience of simultaneous audio and tactile stimulation is going to covered in next section but while composing an audio-tactile experience, these perceptive concepts and illusions has to be taken into account. Being able to author feelings and embed meaning utilizing this concepts is a novel way of conveying a story, in my perspective.\par
+        \subsection{Haptics in Media Arts and Video Games}
+            Both in media art scene and video game industry, immersion is occasionally an important subject. This section will cover several case studies in such domains that utilizing haptic feedback to translate an information, feeling or meaning.\par
+
+            \subsubsection{Case Study: Emoti-Chair}
+                The Emoti-Chair is an audio-tactile display designed to translate music, speech, and environmental noises into physical vibrations that can be felt on the body. This system is aimed at improving music accessibility for deaf and hard of hearing individuals, but it also offers a novel sensory experience for all users\cite{Emoti-Chair}.\par
+
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/emotichair.png}
+                    \caption{A visual of audio-tactile display Emoti-Chair.}
+                    \label{fig:EMOTICHAIR}
+                \end{figure}
+
+                This work physically and technically one of closer works to Embracing Sphere. Both of them in core concept translating audio signals into vibrotactile stimuli via an array of voice coils actuators embedded in a chair form factor.\par
+
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/emotichair_back.png}
+                    \caption{Inside parts visual of audio-tactile display Emoti-Chair.}
+                    \label{fig:EMOTICHAIR_BACK}
+                \end{figure}
+
+                Specifically Emoti-Chair using voice coil actuators that have arranged in a two-column by eight-row array can be seen in the figure \ref{fig:EMOTICHAIR_BACK}, each corresponding to a specific frequency band. This spatial mapping allows users to feel different frequency components of sound at different locations on their body.\par
+
+                In one of the interview they have made\footnote{SmartLab TMU News, Emoti-Chair: \url{https://youtu.be/gA--cOs87p4?feature=shared}}, researchers explains the system and describing their work as its confirming the idea that music is essentially multi-modal and maybe even a-modal.\par
+
+                Multimodal interfaces such as Emoti-Chair incorporate multiple forms of input and output to provide a variety of devices to support human-computer interactions. In further experiments researchers introduced Emoti-Chair to professional film-makers and singers in creating and experiencing tactile music on the Emoti-Chair\cite{Composing_Vibrotactile_Music}. They reported on responses to pre and post questionnaires that collected participant views about the workshop and about vibrotactile stimulation in general.\par
+
+                During workshops with professional film-makers, singers and artists, participants either composed vibrotactile music for the first time or experienced their voices as tactile vibrations through the Emoti-Chair. Across these diverse participants, the technology has received positive feedbacks, with strong interest in using it for future projects. Future directions include enabling artists to further explore tactile composition and developing new instruments specifically for vibrotactile music.\par
+            \subsubsection{Case Study: Movement and Impact by Yvonne Weber and Sabine Haerri}
+                
+            \subsubsection{Case Study: Nintendo Switch and Playstation Exclusive Games}
     \section{Audio-Tactile Interaction}
         \subsection{Definition of Audio-Tactile Multi-Modal Interaction} Define audio-tactility and explain differences from other multi-modal systems.
         \subsection{Multi-Modal Media in Sci-Fi Literature} Case study about Feelies in Brave New World - Aldous Huxley 
