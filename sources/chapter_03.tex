@@ -36,13 +36,15 @@
 
         RT60 alone is not enough to create a RIR. At the same time we need to generate a gradual fade and filter out envelopes to imitate an absorption slope. Subtractive synthesis came into formula at this point, basically gradually filtering and turning down the volume of a white noise with subtractive synthesis approach can be utilized in procedural RIR generation.\par
 
+        Flowchart shown in the figure \ref{fig:FLOW} showing high level process flow in the procedural RIR generation. The output of this process is not a simulation level or mentioned RIR capturing methods level realistic but this primitive approach generates fast realtime RIR files to use in convolution reverb.\par
+        
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.8\textwidth]{images/procedural_RIR_flowchart.png}
             \caption{Flowchart of procedural RIR generation module.}
             \label{fig:FLOW}
-        \end{figure}    
+        \end{figure}
 
-        Flowchart above in the figure \ref{fig:FLOW} showing high level process flow in the procedural RIR generation. The output of this process is not a simulation level or mentioned RIR capturing methods level realistic but this primitive approach generates fast realtime RIR files to use in convolution reverb.\par
-    \section{Audio-Tactile Playback System} How are the RIRs applied (e.g., real-time convolution)? What audio engine/libraries are used? Output format (stereo, binaural, ambisonics)?
+        With high level explanation of procedural RIR generation, next section will cover haptic and audio content generation and playback system details.\par
+    \section{Audio-Tactile Content Design and Playback System} How are the RIRs applied (e.g., real-time convolution)? What audio engine/libraries are used? Output format (stereo, binaural, ambisonics)?
     \section{Narrative Structure} Explain how the environmental snapshots are used to convey the intended narrative.
