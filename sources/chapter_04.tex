@@ -1,18 +1,22 @@
 \chapter{Implementation}
+    The Embracing Sphere installation is built into a physical car seat. When a user is seated, the system plays a pre-authored experience composed of synchronized audio and vibrotactile events. The following subsections detail the hardware and software components that sets the installation.\par
     \section{Hardware Setup}
-        The Embracing Sphere installation is built into a physical car seat. When a user is seated, the system plays a pre-authored experience composed of synchronized audio and haptic events. The following subsections detail the hardware and software components that sets the installation.\par
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{images/embracing_sphere_flowchart.png}
+            \caption{Planned flowchart of the Embracing Sphere installation.}
+            \label{fig:ES_FLOW}
+        \end{figure}
 
-        This specific installation is going to be exhibited in Ars Electronica Festival 2025. A Raspberry Pi5 serves as the main computer for the installation. It was selected for its processing power, compact form factor and GPIO capabilities, which are necessary for control and mobility, making the system suitable for exhibition environments like Ars Electronica.\par
+        As main processing unit of the playback system, a microcontroller Raspberry Pi 5 has chosen. Raspberry Pi is a small processing unit that can run traditional personal computer operating systems such as Linux. This small computer has chosen for its small form factor and GPIO pin usage.\par
 
-        We mentioned that sound and haptic modalities luckily can be expressed with vibrations and  designing audio files to drive both headphones and bass shakers chosen because of ease of composition and rendering. Audio files for bass shaker mostly synthesized simpler low frequency waves and some of complex ones are recorded with a powerful contact microphone called Lom Geofón has used to capture natural rumbles in the environment. Used softwares in content creation for the system will be covered in the next chapter.\par
+        Playback system is interactive according to audience behavior with limits and some sensors required to use as a detection point. In that case a light sensor used to detect if any user is seated or not. If a user is seated, idling loop stops and main experience initiates.\par
 
-        The audio channels that drives headphones requires 2 channels to play binaural audio which isolates the listener within the sonic environment and another 2 channels required to drive bass shakers. These bass shakers translates low-frequency audio signals into physical vibrations felt by the user.\par
+        The audio channels that drives headphones requires 2 channels to play binaural audio which isolates the listener within the sonic environment and another 3 channels required to drive voice coil actuators.\par
 
-        In total at least 4 channels needed to create a stable playback system that drives both auditory and haptic parts of the installation. For four independent channels of audio output, ESI GigaPort EX sound cart has chosen. This sound cart has 8 individual audio outputs and it is class compliant, available to use in linux systems like Raspberry Pi5.\par
+        In total at least 5 channels needed to create this playback system that drives both auditory and vibrotactile parts of the installation. For 5 independent channels of audio output, ESI GigaPort EX sound device has chosen. Sound devices are hardwares used in recording and monitoring efficiently through ADDA (analog to digital, digital to analog) converters\cite{Sound_Reinforcement}. This sound device has 8 individual audio outputs and it is class compliant, available to use in linux systems like Raspberry Pi 5.\par
 
-        These 8 analog outputs are line level -10 dBV RCA outputs which is enough to drive headphones but lack of power to drive bass shakers that needs 50w of energy to work. To amplify the haptic channels, Thomann t.amp S-100 MKII selected.\par
-
-        A light sensor used, acts as the trigger, making the start of the experience automatic and seamless for the user. Connected to the GPIO pins of Raspberry Pi5, embedded logic detects if the user has sit and initialize the experience from start or stops the playback.\par
-    \section{Software Development} Languages, frameworks, libraries (e.g., Max/MSP, Pure Data, C++, Python, Unity, Wwise, custom code) used for the procedural engine, audio/haptic rendering, and interaction logic.
+        These 8 analog outputs are line level -10 dBV RCA outputs which is enough to drive headphones but lack of power to drive bass shakers that needs 50w of energy to work. To amplify the haptic channels, Thomann t.amp S-100 MKII power amplifier selected.\par
+    \section{Software Development}
     \section{Art Project Realization} Describe the physical form and user experience of your interactive art installation.
     \section{Challenges and Solutions} Discuss key technical hurdles encountered during implementation and how you overcame them.
