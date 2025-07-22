@@ -1,0 +1,13 @@
+\DeclareGraphicsExtensions{.png,.jpg}
+
+\newcommand{\qrfootnote}[2]{
+  \footnote{
+    \begin{minipage}[t]{0.8\textwidth}
+      #2
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{1cm}
+      \qrcode[height=1cm]{#1}
+    \end{minipage}
+  }
+}
