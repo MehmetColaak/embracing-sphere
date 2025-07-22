@@ -19,14 +19,18 @@
 \include{sources/titlepage}
 \newpage\null\thispagestyle{empty}\newpage
 
-% Acknowledgements
-
-\include{sources/acknowledgement}
-
 \tableofcontents
 
-%   Abstract Page
+% Acknowledgements
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\include{sources/acknowledgement}
 
+%   Abstract Page
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
 \include{sources/abstract}
 \newpage\null\thispagestyle{empty}\newpage
 
