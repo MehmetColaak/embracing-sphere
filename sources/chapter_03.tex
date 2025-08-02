@@ -11,33 +11,33 @@
             \label{fig:VENN}
         \end{figure}        
 
-        The above diagram shows conceptual elements of the Embracing Sphere with "technical" and "artistic" categorizations. This diagram shows my consideration points when creating the experience such as "How audio-tactile system is going to displayed to the audience?" and "How much narrative should I enforced in the experience?". These considerations basically constrain my technical and artistic decisions according to the requirements in exhibition thematically and technically.\par
+        The above diagram shows conceptual elements of the Embracing Sphere with "technical" and "artistic" categorizations. This diagram shows my consideration points when creating the experience, such as "How audio-tactile system is going to be displayed to the audience?" and "How much narrative should I enforce in the experience?". These considerations basically constrain my technical and artistic decisions according to the requirements of the exhibition thematically and technically.\par
 
-        For example the audio-tactile display equipments is chosen with consideration of collaborative exhibition setting of Ars Electronica Festival Campus Exhibition. Therefore instead of a speaker array, a headphone and 3 bass shakers are chosen for audio-tactile play system. In this setup headphone is displaying binaural mix of audio channels composed in ambisonic format for 3D audio.\par
-    \section{Procedural RIR Generation System}
-        This section will detail the procedural RIR generation process in Embracing Sphere. Every different surrounding of us has different acoustical parameters and in time domain has different characters. Some enclosures has more dull and short response while other can be bright and long. This characteristic differences has covered in section 2.2.2 Room Impulse Response Measurement Methods.\par
+        For example, the audio-tactile display equipment is chosen with consideration of the collaborative exhibition setting of the Ars Electronica Festival Campus Exhibition. Therefore, instead of a speaker array, a headphone and 3 bass shakers are chosen for the audio-tactile play system. In this setup, the headphone is displaying a binaural mix of audio channels composed in ambisonic format for 3D audio.\par
+        \section{Procedural RIR Generation System}
+            This section will detail the procedural RIR generation process in Embracing Sphere. Every different surrounding of ours has different acoustical parameters and in the time domain, has different characteristics. Some enclosures have more dull and short responses, while others can be bright and long. These characteristic differences are covered in section 2.2.2 Room Impulse Response Measurement Methods.\par
 
-        Utilizing this characteristic differences may apply contrast and environmental shifting abilities to auditory face of Embracing Sphere. Room impulse responses can be archived and used in demand with a RIR bank system that changing RIR file in convolution reverb but to artistically I chose more aleatoric way of generating RIR files with some parameters introduced in advance (procedural generation).\par
+            Utilizing these characteristic differences may apply contrast and environmental shifting abilities to the auditory face of Embracing Sphere. Room impulse responses can be archived and used on demand with an RIR bank system that changes the RIR file in convolution reverb, but artistically, I chose a more aleatoric way of generating RIR files with some parameters introduced in advance (procedural generation).\par
 
-        Sabine formula that covered in 2.2.1 Definitions for Room Acoustics is simple enough to implement and outputs big enough range values to hear the difference. The RT60 parameter generated with sabine formula is used in RIR generation module.\par
-        
-        $$T_{60} = \frac{0.161 \cdot V}{A}$$
-        
-        In detail, sabine formula needs effective surface area (A), volume (V) variables to output RT60 value. Randomly generating numbers for an imaginary room dimensions can enable us to calculate an effective surface area and volume.\par
+            Sabine's formula, which is covered in 2.2.1 Definitions for Room Acoustics, is simple enough to implement and outputs a big enough range of values to hear the difference. The RT60 parameter generated with the Sabine formula is used in the RIR generation module.\par
+                    
+            $$T_{60} = \frac{0.161 \cdot V}{A}$$
+                    
+            In detail, the Sabine formula needs effective surface area (A), volume (V) variables to output the RT60 value. Randomly generating numbers for an imaginary room's dimensions can enable us to calculate an effective surface area and volume.\par
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.8\textwidth]{images/max_RT60.png}
-            \caption{RT60 value generator with randomized room dimentions and absorption parameter. Developed in Max/MSP visual scripting software.}
+            \caption{RT60 value generator with randomized room dimensions and absorption parameter. Developed in Max/MSP visual scripting software.}
             \label{fig:RT60_MAX}
         \end{figure}
         
-        As seen in the figure \ref{fig:RT60_MAX} 4 random number (3 for dimensions of the room, 1 for overall absorption coefficient) generated using Max/MSP random number generator object, with the scale object parameters the output numbers limited between 3 meter to 20 meter in width and depth and 3 meter to 4.5 meter for height of the imaginary room. Then rest of the expression objects are implementing Sabine formula into module. The output defines the length of the RIR file.\par
+        As seen in the figure \ref{fig:RT60_MAX} 4 random number (3 for dimensions of the room, 1 for overall absorption coefficient) generated using Max/MSP random number generator object, with the scale object parameters the output numbers limited between 3 meter to 20 meter in width and depth and 3 meter to 4.5 meter for height of the imaginary room. The rest of the expression objects are implementing the Sabine formula into the module. The output defines the length of the RIR file.\par
 
-        RT60 alone is not enough to create a RIR. At the same time we need to generate a gradual fade and filter out envelopes to imitate an absorption slope. Subtractive synthesis came into formula at this point, basically gradually filtering and turning down the volume of a white noise with subtractive synthesis approach can be utilized in procedural RIR generation.\par
+        RT60 alone is not enough to create an RIR. At the same time, we need to generate a gradual fade and filter out envelopes to imitate an absorption slope. Subtractive synthesis came into formula at this point, basically gradually filtering and turning down the volume of a white noise, with the subtractive synthesis approach can be utilized in procedural RIR generation.\par
 
-        Flowchart shown in the figure \ref{fig:FLOW} showing high level process flow in the procedural RIR generation. The output of this process is not a simulation level or mentioned RIR capturing methods level realistic but this primitive approach generates fast realtime RIR files to use in convolution reverb.\par
-        
+        A flowchart shown in the figure \ref{fig:FLOW} shows a high level process flow in the procedural RIR generation. The output of this process is not a simulation level or mentioned RIR capturing methods level but this primitive approach generates fast, realtime RIR files to use in convolution reverb.\par
+                
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.8\textwidth]{images/procedural_RIR_flowchart.png}
@@ -45,21 +45,21 @@
             \label{fig:FLOW}
         \end{figure}
 
-        With high level explanation of procedural RIR generation, next section will cover haptic and audio content generation and playback system details.\par
+        With a high level explanation of procedural RIR generation, the next section will cover haptic and audio content generation and playback system details.\par
     \section{Audio-Tactile Content Design and Playback System}
-        Embracing Sphere is developed as an interface rather than artistic content. Although it is going to be exhibited in Ars Electronica Festival - Campus Exhibition, the system developed to have adaptability so audio and haptic content of the system can be authored and updated.\par
+        Embracing Sphere is developed as an interface rather than artistic content. Although it is going to be exhibited in Ars Electronica Festival - Campus Exhibition, the system was developed to have adaptability so that audio and haptic content of the system can be authored and updated.\par
 
-        The artwork can be seen as a theme park train ride or commercially named "4D Cinema" experiences. Nonetheless this research is investigating audio-tactile interfaces in the main focus. There is a narration to follow that is going to be detailed in the next section but the main drive here for the Embracing Sphere is feeling the environment and make audience interpret their own environmental storytelling cues.\par
+        The artwork can be seen as a theme park train ride or commercially named "4D Cinema" experiences. Nonetheless, this research is investigating audio-tactile interfaces as the main focus. There is a narration to follow that is going to be detailed in the next section but the main drive here for the Embracing Sphere is feeling the environment and making the audience interpret their own environmental storytelling cues.\par
         \subsection{Audio Content and Playback System Technologies}
-            Given collaborative exhibition situations taken into account, we decided to choose a regular headphone to not interfere with the other artworks. Following headphone decision, multi-channel playback system requirements reduced dramatically.\par
+            Given collaborative exhibition situations taken into account, we decided to choose a regular headphone so as not to interfere with the other artworks. Following the headphone decision, multi-channel playback system requirements reduced dramatically.\par
 
-            In this plan 2 channel audio and 3 channel haptic signals composed for the experience. For the length of the experience, average audience attention span without visual motion graphics considered and according to the researches around this topic\cite{UX_Interactive_Media}, approximately 8 minute experience planned.\par
+            In this plan 2 channel audio and 3 channel haptic signals are composed for the experience. For the length of the experience, the average audience attention span without visual motion graphics considered and according to the research around this topic\cite{UX_Interactive_Media}, approximately 8 minute experience is planned.\par
 
-            Stereophonic audio first patented by Alan Blumlein, renowned electronic engineer with his inventions in telecommunications and sound technologies\cite{Alan_Blumlein_and_the_Invention_of_Stereo}. The headphones we still using now utilizing same principle of the first stereophonic system. In the vision of creating audio-tactile virtual environments stereophonic compositions are not enough with the spatial needs of auditory domain. Thus "binaural" mixing has been chosen to leverage spatial audio technologies such as ambisonics.\par
+            Stereophonic audio was first patented by Alan Blumlein, a renowned electronic engineer, with his inventions in telecommunications and sound technologies\cite{Alan_Blumlein_and_the_Invention_of_Stereo}. The headphones we are still using now utilize the same principle as the first stereophonic system. In the vision of creating audio-tactile virtual environments, stereophonic compositions are not enough to meet the spatial needs of the auditory domain. Thus, "binaural" mixing has been chosen to leverage spatial audio technologies such as ambisonics.\par
 
-            Binaural mixing, unlike traditional stereo, recreates the natural listening experience by profiling how our ears receive sound in three-dimensional space. This technique utilizes Head-Related Transfer Functions (HRTFs) to simulate how sound waves interact with our head and ear cone before reaching our eardrums. Binaural audio mixing processes audio with these psychoacoustic filters to create convincing spatial perception when played through headphones. With binaural audio listeners perceive sounds as coming from specific locations around them\cite{3D_Audio_and_Acoustic_Environment_Modeling}\cite{3D_Audio}.\par
+            Binaural mixing, unlike traditional stereo, recreates the natural listening experience by profiling how our ears receive sound in three-dimensional space. This technique utilizes Head-Related Transfer Functions (HRTFs) to simulate how sound waves interact with our head and ear cone before reaching our eardrums. Binaural audio mixing processes audio with these psychoacoustic filters to create convincing spatial perception when played through headphones. With binaural audio, listeners perceive sounds as coming from specific locations around them\cite{3D_Audio_and_Acoustic_Environment_Modeling}\cite{3D_Audio}.\par
 
-            For being format-agnostic in the future projects, the main content will be composed in ambisonic format. Unlike channel-based surround sound systems that assign specific speakers to discrete audio channels, ambisonics captures and reproduces the complete spatial sound-field with spherical harmonics mathematics. Ambisonic recordings can be decoded for any speaker configuration or downgraded into binaural format for headphone playback for maintaining spatial accuracy across different playback systems\cite{Ambisonics}.\par
+            For being format-agnostic in future projects, the main content will be composed in ambisonic format. Unlike channel-based surround sound systems that assign specific speakers to discrete audio channels, ambisonics captures and reproduces the complete spatial sound field with spherical harmonics mathematics. Ambisonic recordings can be decoded for any speaker configuration or downgraded into a binaural format for headphone playback to maintain spatial accuracy across different playback systems\cite{Ambisonics}.\par
 
             \begin{figure}[H]
                 \centering
@@ -68,11 +68,11 @@
                 \label{fig:AMBISONICS}
             \end{figure}
 
-            In practical terms, an ambisonic format audio file appears as a multichannel audio file in audio softwares just like any other channel-based format but it requires a decoder to correctly route the information in the multichannel audio file to specific speakers in order to play the audio file as desired.\par
+            In practical terms, an ambisonic format audio file appears as a multichannel audio file in audio software, just like any other channel-based format but it requires a decoder to correctly route the information in the multichannel audio file to specific speakers in order to play the audio file as desired.\par
 
-            For the Ars Electronica exhibition, a pure-data patch developed for binaural decoding and convolution DSP processes. Mentioned pure-data patch will explained further in the next chapter "4.2 Software Development" section.\par
+            For the Ars Electronica exhibition, a Pure Data patch was developed for binaural decoding and convolution DSP processes. The mentioned pure-data patch will be explained further in the next chapter "4.2 Software Development" section.\par
         \subsection{Vibrotactile Content and Playback System Technologies}
-            Vibrotactile content creation in Embracing Sphere combines 2 different approach as sample based content creation and synthesized content creation. The same approaches derived from traditional sound design practices but focused in low frequencies, constrained by vibrotactile display and human haptic perception limits.\par
+            Vibrotactile content creation in Embracing Sphere combines 2 different approaches as sample based content creation and synthesized content creation. The same approaches derived from traditional sound design practices but focused on low frequencies, constrained by vibrotactile display and human haptic perception limits.\par
 
             \begin{figure}[H]
                 \centering
@@ -81,7 +81,7 @@
                 \label{fig:VCA_MECDRAW}
             \end{figure}
 
-            Main vibrotactile actuator shown in figure \ref{fig:VCA}, 50W 4ohm voice coil actuator specified in the spec sheet as output frequency between 10Hz and 80Hz with a resonant frequency specified as 30Hz. A signal that will be displayed through this actuator should be in that frequency range. Therefore a sensitive geophone (Lom Geofon) used for sample based approach in vibrotactile content creation.\par
+            Main vibrotactile actuator shown in figure \ref{fig:VCA}, 50W 4ohm voice coil actuator specified in the spec sheet as output frequency between 10Hz and 80Hz with a resonant frequency specified as 30Hz. A signal that will be displayed through this actuator should be in that frequency range. Therefore, a sensitive geophone (Lom Geofon) is used for sample based approach in vibrotactile content creation.\par
 
             \begin{figure}[H]
                 \centering
@@ -90,13 +90,13 @@
                 \label{fig:WF_GEOFON}
             \end{figure}
 
-            Lom Geofon product spec sheet indicates frequency response between 10Hz and 1000Hz with resonant frequency at 14Hz. This frequency response specifications meets our requirements. The specific microphone mentioned in preceeding chapters this microphone mentioned and used in sampling and documenting low frequency vibrations on solid objects such as a metal bridge shown in the figures \ref{fig:BRUCKELINZREC_02}\ref{fig:BRUCKELINZREC_01} and PlayStation 5 gamepad DualSense shown in the figure \ref{fig:DUALSENSE_GEOFON}.\par
+            Lom Geofon product spec sheet indicates frequency response between 10Hz and 1000Hz with resonant frequency at 14Hz. This frequency response specifications meets our requirements. The specific microphone mentioned in preceding chapters is this microphone, which was used in sampling and documenting low frequency vibrations on solid objects, such as a metal bridge, shown in the figures \ref{fig:BRUCKELINZREC_02}\ref{fig:BRUCKELINZREC_01} and PlayStation 5 gamepad DualSense shown in the figure \ref{fig:DUALSENSE_GEOFON}.\par
 
-            The plan is collecting as many solid vibration textures as possible, editing and displaying these vibrations through voice coil actuator array which in proposed setup 3 voice coil actuator around different positions of the audience to achieve spatial perception in the vibrotactile display as audio playback system.\par
+            The plan is to collect as many solid vibration textures as possible, edit and display these vibrations through a voice coil actuator array, which in the proposed setup, 3 voice coil actuators are placed around different positions of the audience to achieve spatial perception in the vibrotactile display as an audio playback system.\par
 
-            Within this plan, utilized softwares and more details in hardwares will be covered in next chapter "Implementation".\par
+            Within this plan, utilized softwares and more details on hardwares will be covered in the next chapter "Implementation".\par
     \section{Narrative Structure}
-        To effectively communicate in this section, generative adversarial networks (GANs) are utilized to create storyboard visuals that help readers understand the narrative structure and progression of the installation (used text propmts can be seen in the appendixes). These AI generated illustrations serve as visual references that can convey the abstract concepts and environmental transitions that occur during the Embracing Sphere experience.\par
+        To effectively communicate in this section, generative adversarial networks (GANs) are utilized to create storyboard visuals that help readers understand the narrative structure and progression of the installation (the used text prompts can be seen in the appendices). These AI-generated illustrations serve as visual references that can convey the abstract concepts and environmental transitions that occur during the Embracing Sphere experience.\par
 
         \begin{figure}[H]
             \centering
@@ -105,12 +105,12 @@
             \label{fig:PANIC}
         \end{figure}
 
-        The Ars Electronica Festival theme in 2025 is selected as "Panic: Yes/No?". To match the theme, narrative content is shaped around a claustrophobia and drowning.\par
+        The Ars Electronica Festival theme in 2025 is selected as "Panic: Yes/No?". To match the theme, narrative content is shaped around claustrophobia and drowning.\par
 
-        The experience is plays a looping sound of bridge rumble noticeable in close proximity to the artwork. When the audience decide to sit the seat, the main narrative experience starts.\par
+        The experience plays a looping sound of bridge rumble, noticeable in close proximity to the artwork. When the audience decides to sit in the seat, the main narrative experience starts.\par
 
-        In first seconds of the experience, opening with first person character perspective, an individual sits on a bench on the metal constructed bridge, listening to crows in the cold, cloudy winter afternoon.\par
- 
+        In the first seconds of the experience, opening with first person character perspective, an individual sits on a bench on the metal constructed bridge, listening to crows in the cold, cloudy winter afternoon.\par
+        
         \begin{center}
             \includegraphics[width=0.8\textwidth]{images/storyboard_01.png}\\
             \textbf{Image 1}
@@ -118,12 +118,10 @@
 
         Then a car approaches, opens the window next to the passenger seat, and honks once. That imminent honk starts flash scene changes, and with each scene transition, we hear the honk sound in a new environment. After this short flash scene sequence, our character decides to get into the car.\par
 
-
         \begin{center}
             \includegraphics[width=0.8\textwidth]{images/storyboard_02.png}\\
             \textbf{Image 2}
         \end{center}
-
 
         They close the door and immediately feel isolated from the outside world, losing the vibration of the bridge as the car starts to accelerate.\par
 
@@ -139,7 +137,7 @@
             \textbf{Image 4}
         \end{center}
 
-        The car starts to fill with water and is swollen by the river. Claustrophobic scene cues with struggling to breathe, heavy pressure from bottom to head. After a short time of struggling, a state of tranquility arrives.\par
+        The car starts to fill with water and is swollen by the river. Claustrophobic scene cues with struggling to breathe, heavy pressure from the bottom to the head. After a short time of struggling, a state of tranquility arrives.\par
 
         \begin{center}
             \includegraphics[width=0.8\textwidth]{images/storyboard_05.png}\\
@@ -163,14 +161,14 @@
             \textbf{Image 8}
         \end{center}
 
-        Our character witnesses past memories or scenes of their life and accepts their fate, falling into abstract space.\par
+        Our character witnesses memories or scenes of their life and accepts their fate, falling into abstract space.\par
 
         \begin{center}
             \includegraphics[width=0.8\textwidth]{images/storyboard_09.png}\\
             \textbf{Image 9}
         \end{center}
 
-        Eventually, they regain consciousness, floating on the river with heavy breathing and waves splashing on him. The experience initiates an end loop that plays looping wave and breathing sound cues in the river until the audience stands up and leaves the experience.\par
+        Eventually, they regain consciousness, floating on the river with heavy breathing and waves splashing on them. The experience initiates an end loop that plays looping wave and breathing sound cues in the river until the audience stands up and leaves the experience.\par
 
         \begin{center}
             \includegraphics[width=0.8\textwidth]{images/storyboard_10.png}\\

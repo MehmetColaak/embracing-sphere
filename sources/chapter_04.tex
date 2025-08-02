@@ -1,5 +1,5 @@
 \chapter{Implementation}
-    The Embracing Sphere installation is built into a physical car seat. When a user is seated, the system plays a pre-authored experience composed of synchronized audio and vibrotactile events. The following subsections detail the hardware and software components that sets the installation.\par
+    The Embracing Sphere installation is built into a physical car seat. When a user is seated, the system plays a pre-authored experience composed of synchronized audio and vibrotactile events. The following subsections detail the hardware and software components that set up the installation.\par
     \section{Hardware Setup}
         \begin{figure}[H]
             \centering
@@ -8,7 +8,7 @@
             \label{fig:ES_FLOW}
         \end{figure}
 
-        As main processing unit of the playback system, a microcontroller Raspberry Pi 5 has chosen. Raspberry Pi is a small processing unit that can run traditional personal computer operating systems such as Linux. This small computer has chosen for its small form factor and GPIO pin usage.\par
+        As the main processing unit of the playback system, a Raspberry Pi 5 has been chosen. Raspberry Pi is a small processing unit that can run traditional personal computer operating systems such as Linux. This small computer has been chosen for its small form factor and GPIO pin usage.\par
 
         \begin{figure}[H]
             \centering
@@ -24,9 +24,9 @@
             \label{fig:HARD_SETUP_06}
         \end{figure}
 
-        Playback system is interactive according to audience behavior with limits and some sensors required to use as a detection point. In that case a photoresistor used to detect if any user is seated or not by checking the light level coming to the sensor. If a user is seated, idling loop stops and main experience initiates.\par      
+        The playback system is interactive according to audience behavior, with limits and some sensors required to use as a detection point. In that case, a photoresistor is used to detect if any user is seated or not by checking the light level coming to the sensor. If a user is seated, the idling loop stops and the main experience initiates.\par      
 
-        The audio channels that drives headphones requires 2 channels to play binaural audio which isolates the listener within the sonic environment and another 3 channels required to drive voice coil actuators.\par
+        The audio channels that drive headphones require 2 channels to play binaural audio, which isolates the listener within the sonic environment and another 3 channels are required to drive voice coil actuators.\par
 
         \begin{figure}[H]
             \centering
@@ -35,34 +35,34 @@
             \label{fig:HARD_SETUP_03}
         \end{figure}  
 
-        In total at least 5 channels needed to create this playback system that drives both auditory and vibrotactile parts of the installation. For 5 independent channels of audio output, ESI GigaPort EX sound device has chosen. Sound devices are hardwares used in recording and monitoring efficiently through ADDA (analog to digital, digital to analog) converters\cite{Sound_Reinforcement}. This sound device has 8 individual audio outputs and it is class compliant, available to use in linux systems like Raspberry Pi 5.\par
+        In total, at least 5 channels are needed to create this playback system that drives both auditory and vibrotactile parts of the installation. For 5 independent channels of audio output, the ESI GigaPort EX sound device has been chosen. Sound devices are hardwares used in recording and monitoring efficiently through ADDA (analog to digital, digital to analog) converters\cite{Sound_Reinforcement}. This sound device has 8 individual audio outputs and it is class compliant, available to use in Linux systems like Raspberry Pi 5.\par
 
-        These 8 analog outputs are line level -10 dBV RCA outputs which is enough to drive headphones but lack of power to drive bass shakers that needs 50w of energy to work. To amplify the haptic channels, Thomann t.amp S-100 MKII power amplifier selected.\par
+        These 8 analog outputs are line level -10 dBV RCA outputs, which are enough to drive headphones but lack the power to drive bass shakers that need 50W of energy to work. To amplify the haptic channels, the Thomann t.amp S-100 MKII power amplifier was selected.\par
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.8\textwidth]{images/hardware_setup_05.png}
-            \caption{2 bass shakers positioned underneath the seat screwed into metal chasis.}
+            \caption{2 bass shakers positioned underneath the seat, screwed into the metal chassis.}
             \label{fig:HARD_SETUP_04}
         \end{figure} 
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=1\textwidth]{images/hardware_setup_04.png}
-            \caption{Fully assembled playback system with seat of Embracing Sphere installaion. Power amplifier for VCA's are visible in front of the seat.}
+            \caption{Fully assembled playback system with seat of Embracing Sphere installation. Power amplifiers for VCA's are visible in front of the seat.}
             \label{fig:HARD_SETUP_05}
         \end{figure}
 
-        Mounting VCA's into the seat and connecting cables into sound device then processing unit  very was intuitive. A sim-racing metal frame used for fixing everything into the seat. Metal frame also helped on transmission of vibrations through the chasis, it elevated whole body vibration feeling.\par
+        Mounting VCA's into the seat and connecting cables into the sound device, then the processing unit was very intuitive. A sim-racing metal frame used for fixing everything into the seat. The metal frame also helped in the transmission of vibrations through the chassis, which elevated the whole body vibration feeling.\par
 
-        Hardware setup and tests such as sine and noise signals and transient signals for testing lag between headphone and the actuators has done. After setting up the signal flow, a stress test has made where every actuators tested in loudest state without clipping in any part of the system. I was quite impressed by the results of the first tests. Overall loudness was alright and vibrotactile feeling was really distinctive.\par
+        Hardware setup and tests, such as sine and noise signals and transient signals for testing the lag between the headphone and the actuators, have been done. After setting up the signal flow, a stress test was made where every actuator was tested in the loudest state without clipping in any part of the system. I was quite impressed by the results of the first tests. Overall, the loudness was alright and the vibrotactile feeling was distinctive.\par
 
     \section{Software Development}
-        After assembling every instrument together, software development and practicing sound design started. The Embracing Sphere includes fixed media in the main content (fixed time and event sequences) and procedural effect chain. Therefore I utilized a Digital Audio Workstation (DAW) called Reaper, for sound design and authoring of the sound design. To achieve user interaction and procedural effect chain I used Pure Data, a visual scripting software for interactive audio-visual projects.\par
+        After assembling every instrument together, software development and practicing sound design started. The Embracing Sphere includes fixed media in the main content (fixed time and event sequences) and a procedural effect chain. Therefore, I utilized a Digital Audio Workstation (DAW) called Reaper, for sound design and authoring of the sound design. To achieve user interaction and procedural effect chain, I used Pure Data, a visual scripting software for interactive audio-visual projects.\par
 
-        In Reaper, I have structured a hierarchy in the sound layers of the experience. In that structure audio signals and vibrotactile signals are separated into 2 different effect chains. Audio signals/events in the audio channels first spatialized with the IEM Suite plugins (Institute of Electronic Music), an ambisonic plugin toolkit that has utilities for spatial encoding and decoding, then decoded for binaural monitoring and that monitored output exported to use in the Pure Data patch.\par
+        In Reaper, I have structured a hierarchy in the sound layers of the experience. In that structure, audio signals and vibrotactile signals are separated into 2 different effect chains. Audio signals/events in the audio channels are first spatialized with the IEM Suite plugins (Institute of Electronic Music), an ambisonic plugin toolkit that has utilities for spatial encoding and decoding, then decoded for binaural monitoring and that monitored output is exported to use in the Pure Data patch.\par
 
-        Vibrotactile signal just filtered with low pass filter, a filter that filters audio signal above certain frequencies. This filtering was necessary to display audio signals with the bass shakers, as mentioned before, bass shakers have a ceiling on frequency to displayed, any signal that has frequency content above 80Hz creating unwanted artifacts and issues on the bass shaker.\par
+        Vibrotactile signal just filtered with a low pass filter, a filter that filters the audio signal above certain frequencies. This filtering was necessary to display audio signals with the bass shakers, as mentioned before, bass shakers have a ceiling on frequency to display. Any signal that has frequency content above 80Hz creates unwanted artifacts and issues on the bass shaker.\par
 
         \begin{figure}[H]
             \centering
@@ -71,7 +71,7 @@
             \label{fig:REAPER}
         \end{figure} 
 
-        After sound design process finished, a test patch created on Pure Data. This patch allows to simulate exhibition environment by changing play states on mouse click. Image of the patch can be seen in the figure \ref{fig:PUREDATA} below.\par
+        After the sound design process finished, a test patch was created on Pure Data. This patch allows for simulating an exhibition environment by changing play states on mouse click. Image of the patch can be seen in the figure \ref{fig:PUREDATA} below.\par
 
         \begin{figure}[H]
             \centering
@@ -80,28 +80,28 @@
             \label{fig:PUREDATA}
         \end{figure}
 
-        Further developments on the patch includes translating procedural RIR patch from Max/MSP to Pure Data and setting the patch as startup command in the Raspberry Pi 5 to ensure seamless integration of the artwork in the exhibition.\par
+        Further developments on the patch include translating the procedural RIR patch from Max/MSP to Pure Data and setting the patch as a startup command in the Raspberry Pi 5 to ensure seamless integration of the artwork in the exhibition.\par
 
-        The command made by editing autostart file in the Raspberry Pi 5 by adding a line shown below.\par
-        
+        The command was made by editing the autostart file in the Raspberry Pi 5 by adding a line shown below.\par
+                
         \begin{verbatim}
 sudo pd -nogui -alsa /home/pi/embracing_sphere/main.pd
         \end{verbatim}
         
-        This specific command starts the patch on startup with given instructions such as "-nogui" which is directing no graphic user interface while playing and audio engine instructions for Linux.\par
+        This specific command starts the patch on startup with given instructions such as "-nogui", which directs no graphic user interface while playing and audio engine instructions for Linux.\par
     \section{Challenges and Solutions}
-        One of the biggest challenges I have seen while I was developing Embracing Sphere, finding  good sources for vibrotactile content creation. Despite many written and video sources available for sound design and audio content creation, vibrotactile content creation tutorials or fundamental knowledge were not enough in comparison with audio domain.\par
+        One of the biggest challenges I have seen while I was developing Embracing Sphere was finding good sources for vibrotactile content creation. Despite many written and video sources available for sound design and audio content creation, tutorials on vibrotactile content creation or fundamental knowledge were not enough in comparison with the audio domain.\par
 
-        I have solved this issue with reverse engineering already established interactive applications such as video games and racing simulations. By sampling these applications I had a chance to examine vibrotactile content. Some samples I recorded are used in Embracing Sphere's vibrotactile later such as tire and engine rumble of the vehicle.\par
+        I have solved this issue with reverse engineering already established interactive applications, such as video games and racing simulations. By sampling these applications, I had a chance to examine vibrotactile content. Some samples I recorded are used in Embracing Sphere's vibrotactile layer, such as the tire and engine rumble of the vehicle.\par
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=1\textwidth, angle=180]{images/rumble_capture.png}
-            \caption{A picture from simulation rumble signal sampling session. Assetto Corsa (a vehicle simulation game, developed by Kunos at 2013.) and sim-hub (an add-on tool for telemetry logging and generating rumble signal with telemetry data accessed from simulation.) used for vehicle simulation, recorded through sound card.}
+            \caption{A picture from a simulation rumble signal sampling session. Assetto Corsa (a vehicle simulation game, developed by Kunos in 2013) and sim-hub (an add-on tool for telemetry logging and generating rumble signal with telemetry data accessed from simulation) were used for vehicle simulation, recorded through a sound card.}
             \label{fig:RUMBLE_CAPTURE}
         \end{figure}
 
-        Another challenge I've faced is trial and error pattern was rather slower than desired. To solve this challenge I chose same approach with Emoti-Chair project \cite{Composing_Vibrotactile_Music}. I used the seat itself to author the audio and vibrotactile content, I sat on the seat while editing and designing, monitored the overall feeling immediately. This approach reminded me theater mixing in cinema industry, tailored content is directly displayed, evaluated in the corresponding display system.\par
+        Another challenge I've faced is that the trial-and-error pattern was rather slower than desired. To solve this challenge, I chose the same approach as the Emoti-Chair project \cite{Composing_Vibrotactile_Music}. I used the seat itself to author the audio and vibrotactile content. I sat on the seat while editing and designing and monitored the overall feeling immediately. This approach reminded me of theater mixing in the cinema industry, where tailored content is directly displayed and evaluated in the corresponding display system.\par
 
         \begin{figure}[H]
             \centering
@@ -110,12 +110,12 @@ sudo pd -nogui -alsa /home/pi/embracing_sphere/main.pd
             \label{fig:THEATER_MIX}
         \end{figure}
 
-        In design and storyboard preparations, I've faced a challenge of finding right multi-modal sensory scenarios to successfully create an environmental storytelling. After a long thinking about real-life experiences that affected me directly with auditory and tactile modalities, I came up with an idea of story that happens mostly inside a car. This decision is derived from both my own experiences and a research about presence, "At the Heart of It All: The Concept of Presence"\cite{Concept_of_Presence}. According to this research about presence, the experience of being inside a moving vehicle represents a perfect example of "presence as transportation" where multiple sensory modalities work in harmony to create the illusion of moving through space while remaining physically stationary relative to the vehicle interior.\par
+        In design and storyboard preparations, I've faced a challenge of finding the right multi-modal sensory scenarios to successfully create an environmental storytelling. After long thinking about real-life experiences that affected me directly with auditory and tactile modalities, I came up with a story that happens mostly inside a car. This decision is derived from both my own experiences and research about presence, "At the Heart of It All: The Concept of Presence"\cite{Concept_of_Presence}. According to this research about presence, the experience of being inside a moving vehicle represents a perfect example of "presence as transportation," where multiple sensory modalities work in harmony to create the illusion of moving through space while remaining physically stationary relative to the vehicle interior.\par
 
-        The research shows that presence works best when visual, audio and tactile feedback combined together. Vibrotactile modality highlighted important especially for creating realistic environmental experiences. This multi-modal approach aligns perfectly with the aims of Embracing Sphere, as the car environment naturally provides rich opportunities for meaningful vibrotactile content such as the subtle rumble of the engine transmitted through the seat to the varying textures of different road surfaces felt through the vehicle chassis.\par
+        The research shows that presence works best when visual, audio, and tactile feedback are combined. Vibrotactile modality highlighted the importance, especially for creating realistic environmental experiences. This multi-modal approach aligns perfectly with the aims of Embracing Sphere, as the car environment naturally provides rich opportunities for meaningful vibrotactile content, such as the subtle rumble of the engine transmitted through the seat to the varying textures of different road surfaces felt through the vehicle chassis.\par
 
-        Secondly, from my own experiences I think that creating contrast situations and implementing these two distinctive situations, enhances both end of the spectrum such as a subtle vibrating bridge to saturated stimulations of being inside of a car that is falling into the sea.\par
+        Secondly, from my own experiences, I think that creating contrast situations and implementing these two distinctive situations enhances both ends of the spectrum, such as a subtle vibrating bridge to saturated stimulations of being inside a car that is falling into the sea.\par
 
-        Embedding environmental storytelling cues in this story was the biggest challenge I've faced. Because of short length of the story I placed short term environmental cues such as, rumble strips on the road and semi-open window next to passenger seat ends up with catastrophic results. For more long term environmental cues I used more abstract approach by using procedural RIR to enhance flash memory sequences more vibrant and distinctive.\par
+        Embedding environmental storytelling cues in this story was the biggest challenge I've faced. Because of the short length of the story, I placed short term environmental cues such as rumble strips on the road and a semi-open window next to the passenger seat, which results in catastrophic results. For more long term environmental cues, I used a more abstract approach by using procedural RIR to enhance flash memory sequences more vibrantly and distinctly.\par
 
-        Ensuring the user-experience will be the same as my intentions within the story was hardest but this is the challenge of many creative practices. For now I cling onto believing in my creative craft.\par
+        Ensuring the user experience will be the same as my intentions within the story was hardest, but this is the challenge of many creative practices. For now, I cling to believing in my creative craft.\par
