@@ -13,7 +13,7 @@
 
         The above diagram shows conceptual elements of the Embracing Sphere with "technical" and "artistic" categorizations. This diagram shows my consideration points when creating the experience, such as "How audio-tactile system is going to be displayed to the audience?" and "How much narrative should I enforce in the experience?". These considerations basically constrain my technical and artistic decisions according to the requirements of the exhibition thematically and technically.\par
 
-        For example, the audio-tactile display equipment is chosen with consideration of the collaborative exhibition setting of the Ars Electronica Festival Campus Exhibition. Therefore, instead of a speaker array, a headphone and 3 bass shakers are chosen for the audio-tactile play system. In this setup, the headphone is displaying a binaural mix of audio channels composed in ambisonic format for 3D audio.\par
+        For example, the audio-tactile display equipment is chosen with consideration of the collaborative exhibition setting of the Ars Electronica Festival Campus Exhibition. Therefore, instead of a loudspeaker array, a headphone and 3 bass shakers are chosen for the audio-tactile play system. In this setup, the headphone is displaying a binaural mix of audio channels composed in ambisonic format for 3D audio.\par
         \section{Procedural RIR Generation System}
             This section will detail the procedural RIR generation process in Embracing Sphere. Every different surrounding of ours has different acoustical parameters and in the time domain, has different characteristics. Some enclosures have more dull and short responses, while others can be bright and long. These characteristic differences are covered in section 2.2.2 Room Impulse Response Measurement Methods.\par
 
@@ -59,7 +59,7 @@
 
             Binaural mixing, unlike traditional stereo, recreates the natural listening experience by profiling how our ears receive sound in three-dimensional space. This technique utilizes Head-Related Transfer Functions (HRTFs) to simulate how sound waves interact with our head and ear cone before reaching our eardrums. Binaural audio mixing processes audio with these psychoacoustic filters to create convincing spatial perception when played through headphones. With binaural audio, listeners perceive sounds as coming from specific locations around them\cite{3D_Audio_and_Acoustic_Environment_Modeling}\cite{3D_Audio}.\par
 
-            For being format-agnostic in future projects, the main content will be composed in ambisonic format. Unlike channel-based surround sound systems that assign specific speakers to discrete audio channels, ambisonics captures and reproduces the complete spatial sound field with spherical harmonics mathematics. Ambisonic recordings can be decoded for any speaker configuration or downgraded into a binaural format for headphone playback to maintain spatial accuracy across different playback systems\cite{Ambisonics}.\par
+            For being format-agnostic in future projects, the main content will be composed in ambisonic format. Unlike channel-based surround sound systems that assign specific loudspeakers to discrete audio channels, ambisonics captures and reproduces the complete spatial sound field with spherical harmonics mathematics. Ambisonic recordings can be decoded for any loudspeaker configuration or downgraded into a binaural format for headphone playback to maintain spatial accuracy across different playback systems\cite{Ambisonics}.\par
 
             \begin{figure}[H]
                 \centering
@@ -68,7 +68,7 @@
                 \label{fig:AMBISONICS}
             \end{figure}
 
-            In practical terms, an ambisonic format audio file appears as a multichannel audio file in audio software, just like any other channel-based format but it requires a decoder to correctly route the information in the multichannel audio file to specific speakers in order to play the audio file as desired.\par
+            In practical terms, an ambisonic format audio file appears as a multichannel audio file in audio software, just like any other channel-based format but it requires a decoder to correctly route the information in the multichannel audio file to specific loudspeakers in order to play the audio file as desired.\par
 
             For the Ars Electronica exhibition, a Pure Data patch was developed for binaural decoding and convolution DSP processes. The mentioned pure-data patch will be explained further in the next chapter "4.2 Software Development" section.\par
         \subsection{Vibrotactile Content and Playback System Technologies}
